@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="Конкретный итератор реализует алгоритм обхода какой-то конкретной коллекции. Объект итератора должен сам отслеживать текущую позицию при обходе коллекции, чтобы отдельные итераторы могли обходить одну и ту же коллекцию независимо.">
+    <Position X="7.594" Y="5.302" Height="1.76" Width="1.981" />
+  </Comment>
+  <Comment CommentText="Итератор описывает интерфейс для доступа и обхода элементов коллекции.">
+    <Position X="7.907" Y="3.375" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Коллекция описывает интерфейс получения итератора из коллекции. Как мы уже говорили, коллекции не всегда являются списком. Это может быть и база данных, и удалённое API, и даже дерево Компоновщика. Поэтому сама коллекция может создавать итераторы, так как она знает, какие именно итераторы способны с ней работать.">
+    <Position X="15.105" Y="3.114" Height="1.99" Width="2.315" />
+  </Comment>
+  <Comment CommentText="Конкретная коллекция возвращает новый экземпляр определённого конкретного итератора, связав его с текущим объектом коллекции. Обратите внимание, что сигнатура метода возвращает интерфейс итератора. Это позволяет клиенту не зависеть от конкретных классов итераторов.">
+    <Position X="15.094" Y="6.646" Height="1.802" Width="2.137" />
+  </Comment>
+  <Class Name="Iterator_Pattern.Video">
+    <Position X="15.25" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Video.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Iterator_Pattern.ConcreteVideoContent" BaseTypeListCollapsed="true">
+    <Position X="13" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAACIAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>ConcreteVideoContent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.263" />
+  </Class>
+  <Class Name="Iterator_Pattern.ConcreteVideoIterator" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAABAAAAAAAAAAAAAAQAAAAAAAAAAABAAA=</HashCode>
+      <FileName>ConcreteVideoIterator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.387" />
+  </Class>
+  <Class Name="Iterator_Pattern.Viewer">
+    <Position X="10.5" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Viewer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Iterator_Pattern.IVideoContent">
+    <Position X="13" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAACIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVideoContent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Iterator_Pattern.IVideoIterator">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IVideoIterator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
