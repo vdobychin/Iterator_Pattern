@@ -8,9 +8,9 @@ namespace Iterator_Pattern
 {
     class ConcreteVideoContent : IVideoContent
     {
-        private Video[] videos;
-
-        public ConcreteVideoContent()
+        private readonly Video[] videos;    //Создаем хранилище для видео роликов
+        
+        public ConcreteVideoContent()       
         {
             videos = new Video[]
             {
@@ -19,24 +19,24 @@ namespace Iterator_Pattern
                 new Video {Name = "C# Паттерны проетирования. Паттерн итератор."}
             };
         }
-
-        public int CountVideo    // Количество видео на канале
-        {
-            get { return videos.Length; }
-        }
-                
+                                
         public IVideoIterator CreateNumerator()
         {
             return new ConcreteVideoIterator(this);
         }
 
-        public Video this[int index]
+        public int CountVideo    // Количество видео на канале (Открытое целочисленное свойство)
+        {
+            get { return videos.Length; } // get - метод аксессор
+        }
+
+        public Video this[int index]     //Индексатор для обращения к элементу массива по целочисленному индексу
         {
             get { return videos[index]; }
         }
 
         
-        public Video this[string name]
+        public Video this[string name]  //Индексатор для обращения к элементу массива по строчному индексу
         {
             get { return videos.FirstOrDefault(c => c.Name == name); }
         }

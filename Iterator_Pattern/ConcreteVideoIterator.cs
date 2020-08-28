@@ -9,22 +9,22 @@ namespace Iterator_Pattern
     //Счетчик
     class ConcreteVideoIterator : IVideoIterator
     {
-        IVideoContent aggregate;
-        int index = 0;
+        private readonly IVideoContent videoContent; // Экземпляр конктретного итератора будет хранить ссылку на экземпляр конкретного видео контента
+        private int index = 0;  // Указатель на элемент моего хранилища
         
-        public ConcreteVideoIterator(IVideoContent a)
+        public ConcreteVideoIterator(IVideoContent videoContent)
         {
-            aggregate = a;
+            this.videoContent = videoContent;
         }
 
         public bool HasNext()
         {
-            return index < aggregate.CountVideo;
+            return index < videoContent.CountVideo;
         }
 
         public Video Next()
         {
-            return aggregate[index++];
+            return videoContent[index++];
         }
     }
 }

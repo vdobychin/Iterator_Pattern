@@ -14,7 +14,7 @@ namespace Iterator_Pattern
             while (iterator.HasNext())
             {
                 Video video = iterator.Next();
-                Console.WriteLine("Видео: " + video.Name + " посмотрел.");
+                Console.WriteLine("Видео: \"" + video.Name + "\" посмотрел.");
             }
         }
 
@@ -30,7 +30,7 @@ namespace Iterator_Pattern
             if (d == null)
                 Console.WriteLine("Такого видео нет!!!");
             else
-                Console.WriteLine("Нашлось:" + videoContent[name].Name);
+                Console.WriteLine("Нашлось: \"" + videoContent[name].Name + "\" приятного просмотра");
         }
     }
 }
